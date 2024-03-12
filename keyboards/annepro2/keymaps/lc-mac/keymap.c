@@ -51,12 +51,12 @@ enum anne_pro_layers {
 * \-----------------------------------------------------------------------------------------/
 */
 const uint16_t keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-  [BASE] = LAYOUT_60_ansi( /* Base */
-    QK_GRAVE_ESCAPE,  KC_1,         KC_2,         KC_3,         KC_4,         KC_5, KC_6,   KC_7,         KC_8,         KC_9,         KC_0,             KC_MINS,   KC_EQL,    KC_BSPC,
-    KC_TAB,           KC_Q,         KC_W,         KC_E,         KC_R,         KC_T, KC_Y,   KC_U,         KC_I,         KC_O,         KC_P,             KC_LBRC,   KC_RBRC,   KC_BSLS,
-    LT(FN1, KC_CAPS), LCTL_T(KC_A), LALT_T(KC_S), LGUI_T(KC_D), LSFT_T(KC_F), KC_G, KC_H,   RSFT_T(KC_J), RGUI_T(KC_K), RALT_T(KC_L), RCTL_T(KC_SCLN),  KC_QUOT,        KC_ENT,
-    KC_LSFT,          KC_Z,         KC_X,         KC_C,         KC_V,         KC_B, KC_N,   KC_M,         KC_COMM,      KC_DOT,       KC_SLSH,          RSFT_T(KC_UP),
-    KC_LCTL,          KC_LALT,      KC_LGUI,                                  KC_SPC,                                   KC_RALT,      LT(FN1, KC_LEFT), LT(FN2, KC_DOWN), RCTL_T(KC_RGHT)
+ [BASE] = LAYOUT_60_ansi( /* Base */
+    QK_GRAVE_ESCAPE,  KC_1,         KC_2,         KC_3,         KC_4,         KC_5, KC_6,   KC_7, KC_8,    KC_9,    KC_0,             KC_MINS,   KC_EQL,    KC_BSPC,
+    KC_TAB,           KC_Q,         KC_W,         KC_E,         KC_R,         KC_T, KC_Y,   KC_U, KC_I,    KC_O,    KC_P,             KC_LBRC,   KC_RBRC,   KC_BSLS,
+    LT(FN1, KC_CAPS), LCTL_T(KC_A), LALT_T(KC_S), LGUI_T(KC_D), LSFT_T(KC_F), KC_G, KC_H,   KC_J, KC_K,    KC_L,    RCTL_T(KC_SCLN),  KC_QUOT,        KC_ENT,
+    KC_LSFT,          KC_Z,         KC_X,         KC_C,         KC_V,         KC_B, KC_N,   KC_M, KC_COMM, KC_DOT,  KC_SLSH,          RSFT_T(KC_UP),
+    KC_LCTL,          KC_LALT,      KC_LGUI,                                  KC_SPC,                      KC_GRV,  LT(FN1, KC_LEFT), LT(FN2, KC_DOWN), RCTL_T(KC_RGHT)
 ),
   /*
   * Layer FN1
