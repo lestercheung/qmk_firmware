@@ -1,4 +1,5 @@
 // Copyright (C) 2022, Hao Xiang Liew
+// Copyright (C) 2024, Lester Cheung
 
 // This program is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -25,42 +26,39 @@ enum layer_names {
   FUN,
 };
 
-/* #define _______ KC_TRNS */
-/* #define XXXXXXX KC_NO */
-
 // Combos
 // Handy generator here: https://codepen.io/mvaneijgen/full/LYEVQXp
 enum combos {
-  TAB_ENT_ESC,
   T_Y_ESC,
-  G_H_ESC,
+  G_H_MINS,
 };
 
-const uint16_t PROGMEM tab_ent_esc[] = { KC_TAB, KC_ENT, COMBO_END};
 const uint16_t PROGMEM t_y_esc[] = { KC_T, KC_Y, COMBO_END};
-const uint16_t PROGMEM g_h_esc[] = { KC_G, KC_H, COMBO_END};
+const uint16_t PROGMEM g_h_mins[] = { KC_G, KC_H, COMBO_END};
 
 combo_t key_combos[] = {
-  [TAB_ENT_ESC] = COMBO(tab_ent_esc, KC_ESC),
   [T_Y_ESC] = COMBO(t_y_esc, KC_ESC),
-  [G_H_ESC] = COMBO(g_h_esc, KC_ESC),
+  [G_H_MINS] = COMBO(g_h_mins, KC_MINS),
 };
 
 
 // Tab dance
 enum {
   TD_MINUS_PLUS,
+  TD_QUOTE_DQUO,
+  TD_SCLN_QUOTE,
 };
 tap_dance_action_t tap_dance_actions[] = {
     // Tap once for minus, twice for plus
     [TD_MINUS_PLUS] = ACTION_TAP_DANCE_DOUBLE(KC_MINS, KC_PLUS),
+    [TD_QUOTE_DQUO] = ACTION_TAP_DANCE_DOUBLE(KC_QUOTE, KC_DQUO),
+    [TD_SCLN_QUOTE] = ACTION_TAP_DANCE_DOUBLE(KC_SCLN, KC_QUOTE),
 };
-
 
 
 /*
 | q   | w  | e   | r       | t       |           |       | y     | u       | i | o | p      |
-| a   | s  | d   | f       | g       |           |       | h     | j       | k | l | ;      |
+| a   | s  | d   | f       | g       |           |       | h     | j       | k | l | ;      r
 | z   | x  | c   | v       | b       |           |       | n     | m       | , | . | /      |
 | ESC | S⇑ | GUI | MEDIA/⭾ | NAV/SPC | MOUSE/ESC | SYM/⏎ | NUM/⇦ | FUN/DEL | - | ' | CTRL/⇦ |
 */
@@ -69,7 +67,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_Q,           KC_W,        KC_E,             KC_R,              KC_T,                                                KC_Y,            KC_U,          KC_I,        KC_O,        KC_P,
     CTL_T(KC_A),    ALT_T(KC_S), GUI_T(KC_D),      SFT_T(KC_F),       KC_G,                                                KC_H,            SFT_T(KC_J),   GUI_T(KC_K), ALT_T(KC_L), CTL_T(KC_SCLN),
     KC_Z,           KC_X,        KC_C,             KC_V,              KC_B,            KC_GRV,           KC_BSLS,          KC_N,            KC_M,          KC_COMM,     KC_DOT,      KC_SLSH,
-    CTL_T(KC_LEFT), KC_LSFT,     KC_LGUI,    LT(MEDIA, KC_TAB), LT(NAV, KC_SPC), LT(MOUSE, KC_ESC), LT(SYM, KC_ENT),  LT(NUM, KC_SPC), LT(FUN, KC_BSPC), TD(TD_MINUS_PLUS), KC_QUOT, CTL_T(KC_RGHT)),
+    SFT_T(KC_LEFT), KC_LSFT,     KC_LGUI,    LT(MEDIA, KC_TAB), LT(NAV, KC_SPC), LT(MOUSE, KC_ESC), LT(SYM, KC_ENT),  LT(NUM, KC_SPC), LT(FUN, KC_BSPC), TD(TD_MINUS_PLUS), TD(TD_QUOTE_DQUO), SFT_T(KC_RGHT)),
 
 /*
 | ⛑️  |     |     |     |   |   |   |       | 🔇   |      |       |        |
