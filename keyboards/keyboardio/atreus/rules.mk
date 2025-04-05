@@ -10,4 +10,11 @@ NKRO_ENABLE = yes           # Enable N-Key Rollover
 BACKLIGHT_ENABLE = no       # Enable keyboard backlight functionality
 RGBLIGHT_ENABLE = no        # Enable keyboard RGB underglow
 AUDIO_ENABLE = no           # Audio output
-UNICODE_ENABLE = no         # Unicode
+## mine
+# UNICODE_ENABLE = no         # Unicode
+VIA_ENABLE = yes
+LTO_ENABLE = yes
+# CAPS_WORD_ENABLE = yes
+# COMMAND_ENABLE = yes			# magic commands
+# COMBO_ENABLE = yes			# keys combo
+TAP_DANCE_ENABLE = yes		# adds <1k
